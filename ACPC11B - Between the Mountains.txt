@@ -1,0 +1,89 @@
+question->  https://www.spoj.com/problems/ACPC11B/
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Main
+{
+static class FastReader
+{
+BufferedReader br;
+StringTokenizer st;
+public FastReader()
+{
+br = new BufferedReader(new
+InputStreamReader(System.in));
+}
+String next()
+{
+while (st == null || !st.hasMoreElements())
+{
+try
+{
+st = new StringTokenizer(br.readLine());
+}
+catch (IOException e)
+{
+e.printStackTrace();
+}
+}
+return st.nextToken();
+}
+int nextInt()
+{
+return Integer.parseInt(next());
+}
+long nextLong()
+{
+return Long.parseLong(next());
+}
+double nextDouble()
+{
+return Double.parseDouble(next());
+}
+String nextLine()
+{
+String str = "";
+try
+{
+str = br.readLine();
+}
+catch (IOException e)
+{
+e.printStackTrace();
+}
+return str;
+}
+}
+    
+    
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		FastReader in=new FastReader();
+		int t;
+		t=in.nextInt();
+		while(t-->0)
+		{
+		    int n,m,i,s= Integer.MAX_VALUE;
+		    n=in.nextInt();
+		    int[] a=new int[n];
+		    for(i=0;i<n;i++)
+		        a[i]=in.nextInt();
+		        
+		    Arrays.sort(a);
+		    m=in.nextInt();
+		    int[] array=new int[m];
+		    for(i=0;i<m;i++)
+		        array[i]=in.nextInt();
+		    Arrays.sort(array);
+		    
+		    for(i=0;i<n;i++)
+		    {
+		        for(int j=0;j<m;j++)
+		     s=Math.min(s,Math.abs(a[i]-array[j]));   
+		    }
+		    System.out.println(s);
+		    
+		}
+	}
+}
