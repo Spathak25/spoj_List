@@ -1,0 +1,38 @@
+question->  https://www.spoj.com/problems/ACPC10A/
+
+import java.util.*;
+import java.lang.*;
+
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner in=new Scanner(System.in);
+	while(true) {
+	
+	float a,b,c;
+	a=in.nextFloat();
+	b=in.nextFloat();
+	c=in.nextFloat();
+	if(a==0 && b==0 && c==0)
+		break;
+	
+	if(b-a==c-b)
+	{
+		int e=-1;
+		e=(int)(c+(b-a));
+		System.out.println("AP "+e);
+		continue;
+	}
+	
+	if(b*b==a*c)
+	{
+		float e=c/b;
+		int f=(int)(c*e);
+		System.out.println("GP "+f);
+		
+	}
+		
+	}
+	}
+}
