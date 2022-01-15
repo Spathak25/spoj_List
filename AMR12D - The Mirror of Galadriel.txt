@@ -1,0 +1,42 @@
+question->  https://www.spoj.com/problems/AMR12D/
+
+import java.util.*;
+import java.lang.*;
+
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	Scanner in=new Scanner(System.in);
+	int t,i,j;
+	t=in.nextInt();
+	while(t-->0)
+	{
+	     String s;
+	     s=in.next();
+	    if(palin(s)==1)
+	      System.out.println("YES");
+	      else
+	      System.out.println("NO");
+	        
+	    
+	}
+	
+	}
+	static int palin(String str)
+	{
+	    int pali=1;
+	    int i,j;
+	    int l=str.length();
+	    for(i=0,j=l-1;i<j;i++,j--)
+	        {
+	           if(str.charAt(i)!=str.charAt(j))
+	           {
+	              pali=0;
+	              break;
+	           }
+	   
+	        }
+	        return pali;
+	}
+}
