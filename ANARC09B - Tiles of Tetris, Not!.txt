@@ -1,0 +1,31 @@
+question->  https://www.spoj.com/problems/ANARC09B/
+
+import java.util.*;
+import java.lang.*;
+
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+Scanner in=new Scanner(System.in);
+	long w,h,lcm;
+	w=in.nextLong();
+	h=in.nextLong();
+	while(w>0 && h>0)
+	{
+	    long z=gcd(w,h);
+	   lcm=(w*h)/z;
+	    System.out.println(lcm/z);
+	    	w=in.nextLong();
+	h=in.nextLong();
+	}
+	
+	
+	}
+	static long gcd(long w,long h)
+	{
+	    if(w==0)
+	     return h;
+	     return gcd(h%w,w);
+	}
+}
