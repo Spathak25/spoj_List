@@ -1,0 +1,70 @@
+question->  https://www.spoj.com/problems/AMR10G/
+
+import java.util.*;
+import java.lang.*;
+
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner in=new Scanner(System.in);
+	int t,i;
+	t=in.nextInt();
+	while(t-->0)
+	{
+		int n=in.nextInt();
+	    int k=in.nextInt();
+		long [] array=new long[n];
+		for(i=0;i<n;i++)
+			array[i]=in.nextLong();
+			sort(array,0,n-1);
+			long z=1000000000;
+			for(i=0;i<=n-k;i++)
+			{
+			 if((array[i+k-1]-array[i])<z)
+			    z=(array[i+k-1]-array[i]);
+			}
+			System.out.println(z);
+	}
+	}
+	static void sort(long a[],int low,int high)
+{
+	   int s;
+	   if(low<high)
+	   {
+		   s=partition(a,low,high);
+		   sort(a,low,s-1);
+		   sort(a,s+1,high);
+	   }
+}
+
+static int partition(long a[],int low,int high)
+{
+	   int p,i,j,temp;
+	   p=(int)a[low];
+	   i=low+1;
+	   j=high;
+	   while(low<high)
+	   {
+		   while(a[i]<=p&&i<high)
+			   i++;
+		   while(a[j]>p)
+			   j--;
+		   if(i<j)
+   		   {
+   			   temp=(int)a[i];
+   			   a[i]=a[j];
+   			   a[j]=temp;
+   		   }
+   		   else
+   		   {
+   			   temp=(int)a[low];
+   			   a[low]=a[j];
+   			   a[j]=temp;
+   			   return j;
+   			   
+   		   }
+   	   }
+   	   return j;
+      }
+}
