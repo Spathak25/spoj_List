@@ -1,0 +1,88 @@
+Question link-> https://www.spoj.com/problems/ARMY/
+
+import java.io.*;
+import java.util.*;
+public class Main {
+    public final static String GODZILLA = "Godzilla";
+    public final static String MECHAGODZILLA = "MechaGodzilla";
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        PrintWriter out = new PrintWriter(System.out);
+        int testcases = Integer.parseInt(in.readLine());
+        while (testcases-- > 0) {
+            in.readLine();
+            StringTokenizer tokenizer = new StringTokenizer(in.readLine());
+            int ng = Integer.parseInt(tokenizer.nextToken());
+            int nm = Integer.parseInt(tokenizer.nextToken());
+
+            // Find the strongest monster for both armies
+            int strongestOfGodzilla = 0;
+            tokenizer = new StringTokenizer(in.readLine());
+            for (int i = 0; i < ng; i++) {
+                int strength = Integer.parseInt(tokenizer.nextToken());
+                if (strength > strongestOfGodzilla)
+                    strongestOfGodzilla = strength;
+            }
+            int strongestOfMechaGodzilla = 0;
+            tokenizer = new StringTokenizer(in.readLine());
+            for (int i = 0; i < nm; i++) {
+                int strength = Integer.parseInt(tokenizer.nextToken());
+                if (strength > strongestOfMechaGodzilla)
+                    strongestOfMechaGodzilla = strength;
+            }
+
+            // The army with the strongest among all monsters win the battle
+            if (strongestOfGodzilla >= strongestOfMechaGodzilla)
+                out.println(GODZILLA);
+            else
+                out.println(MECHAGODZILLA);
+        }
+        out.flush();
+    }
+}
+
+-----------------------******************************************************-----------------------------------------------------------
+                             C-code
+#include <stdio.h>
+
+int main(void) {
+int t;
+ scanf("%d",&t);
+ int i;
+ int j;
+ int ng;
+ int nm;
+ int m1;
+ int m2;
+ for(i=0;i<t;i++) {
+  scanf("%d",&ng);
+  scanf("%d",&nm);
+  int g[ng];
+  int m[nm];
+  for(j=0;j<ng;j++) {
+   scanf("%d",&g[j]);
+  }
+  for(j=0;j<nm;j++) {
+   scanf("%d",&m[j]);
+  }
+  m1=g[0];
+  m2=m[0];
+  for(j=1;j<ng;j++) {
+   if(m1<g[j])
+   m1=g[j];
+  }
+  for(j=1;j<nm;j++) {
+   if(m2<m[j])
+   m2=m[j];
+  }
+  if(m1>=m2)
+   printf("Godzilla\n");
+  else if(m1<m2)
+   printf("MechaGodzilla\n");
+  else
+   printf("u");
+ }
+
+	return 0;
+}
