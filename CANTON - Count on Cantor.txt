@@ -1,0 +1,56 @@
+Question link-> https://www.spoj.com/problems/CANTON/
+
+import java.util.*;
+import java.lang.*;
+
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	Scanner in=new Scanner(System.in);
+		int t;
+		t=in.nextInt();
+		while(t-->0)
+		{
+		    int n;
+		    n=in.nextInt();
+		    carton(n);
+		    
+		}
+	}
+	static void carton(int n)
+	{
+	    int i=1,j=1,k=1;
+	    
+	    while(k<n)
+	    {
+	        j++;
+	        k++;
+	        if(k==n)
+	         break;
+	         
+	         while(j>1 && k<n)
+	         {
+	             i++;
+	             j--;
+	             k++;
+	         }
+	         if(k==n)
+	         break;
+	         i++;
+	         k++;
+	         if(k==n)
+	         break;
+	         while(i>1 && k<n)
+	         {
+	             i--;
+	             j++;
+	             k++;
+	         }
+	         if(k==n)
+	         break;
+	    }
+	    System.out.println("TERM "+n+" IS "+i+"/"+j);
+	    
+	}
+}

@@ -1,0 +1,33 @@
+Question link-> https://www.spoj.com/problems/CANDY3/
+
+import java.util.*;
+import java.lang.*;
+import java.math.*;
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner  s = new Scanner(System.in);
+	int t;
+	t=s.nextInt();
+	
+	while(t-- > 0){
+		System.out.println();
+		int students = s.nextInt();
+		long[] candies = new long[students];
+		for(int i = 0; i < students; i++){
+			candies[i] = s.nextLong();
+		}
+		BigInteger sum = BigInteger.ZERO;
+		for(int i = 0; i < students; i++){
+			sum=sum.add(BigInteger.valueOf(candies[i]));
+		}
+		if(sum.mod(BigInteger.valueOf((long)students))==BigInteger.ZERO){
+			System.out.println("YES");
+		}
+		else{
+			System.out.println("NO");
+		}
+	}
+	}
+}

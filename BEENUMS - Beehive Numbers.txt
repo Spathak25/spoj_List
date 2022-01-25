@@ -1,0 +1,42 @@
+Question link-> https://www.spoj.com/problems/BEENUMS/
+
+import java.util.*;
+import java.lang.*;
+
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	Scanner in=new Scanner(System.in);
+		long n;
+		n=in.nextLong();
+		while(n!=-1)
+		{
+		    long s=1;
+		    if(n==1)
+		     System.out.println("Y");
+		    else
+		    {
+		    for(int i=1;;i++)
+		    {
+		        s+=6*i;
+		        if(n==s)
+		        {
+		          System.out.println("Y");
+		          break;
+		        }
+		        else if(s>n)
+		        {
+		         System.out.println("N");
+		          break;   
+		        }
+		          
+		          
+		    }
+		    }
+		    n=in.nextLong();
+		    
+		}
+		
+	}
+}
