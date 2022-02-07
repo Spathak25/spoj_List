@@ -1,0 +1,39 @@
+Question link-> https://www.spoj.com/problems/COMDIV/
+
+#include <stdio.h>
+#include<math.h>
+
+int gcd(int a,int b);
+int main(void) {
+  int t;
+  scanf("%d",&t);
+  while(t-->0)
+  {
+  int a,b,count=0;
+  scanf("%d%d",&a,&b);
+  int z=gcd(a,b);
+   for(int i=1;i<=sqrt(z);i++)
+	    {
+	        if(z%i==0)
+	        {
+	            if(z/i==i)
+	               count++;
+	               else
+	                count+=2;
+	        }
+	          
+	    }
+	   printf("%d",count);
+	   printf("\n");
+     
+  }
+	return 0;
+}
+	 int gcd(int a,int b)
+	{
+	    if(a==0)
+	     return b;
+	     
+	     return gcd(b%a,a);
+	    
+	}
