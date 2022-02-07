@@ -1,0 +1,35 @@
+question link-> https://www.spoj.com/problems/CRDS/
+
+import java.util.*;
+import java.lang.*;
+
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		
+	Scanner in=new Scanner(System.in);
+	long  n;
+	int a;
+	a=in.nextInt();
+	while(a!=0)
+	{
+	 n=in.nextLong();
+	 n=n%1000007;
+     System.out.println(card(n));	
+     a--;  
+	}
+	}
+	
+	public static long card(long x)
+	{
+		long s=0;
+	    long t=x;
+		while(x>=1)
+		{
+			s=s+((x*2)+x);
+			x--;
+		}
+		return (s-t)%1000007;
+	}
+}
