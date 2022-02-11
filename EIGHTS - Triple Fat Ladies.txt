@@ -1,0 +1,28 @@
+Question link-> https://www.spoj.com/problems/EIGHTS/
+
+import java.util.*;
+import java.lang.*;
+
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner in=new Scanner(System.in);
+		long t;
+		t=in.nextLong();
+		while(t-->0)
+		{
+			long k,z;
+			k=in.nextLong();
+			if(k==1)
+			System.out.println("192");
+			
+			else
+			{
+			 z=192+(k-1)*250;
+			 System.out.println(z);
+			}
+			
+		}
+	}
+}
