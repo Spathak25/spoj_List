@@ -1,0 +1,33 @@
+Question link-> https://www.spoj.com/problems/ENIGMATH/
+
+import java.util.*;
+import java.lang.*;
+
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		
+	Scanner in=new Scanner(System.in);
+long t;
+t=in.nextLong();
+while(t>0)
+{
+	long a,b;
+	a=in.nextLong();
+	b=in.nextLong();
+	long lcm;
+	lcm=(a/gcd(a,b))*b;
+	
+	System.out.println(lcm/a+" "+lcm/b);
+	t--;
+}
+}
+static long gcd(long a,long b)
+{
+	if(a==0)
+		return b;
+	return gcd(b%a,a); 
+
+	}
+}
