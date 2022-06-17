@@ -1,0 +1,31 @@
+question--> https://www.spoj.com/problems/WILLITST/
+
+
+import java.util.*;
+import java.lang.*;
+
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner in=new Scanner(System.in);
+	
+	long n;
+	n=in.nextLong();
+	while(n>1)
+	{
+		
+		if(n%2==0)
+			n=n/2;
+		else
+			n=3*n+3;
+		if(n%3==0)
+		{
+			System.out.println("NIE");
+		System.exit(0);}
+	}
+	
+		System.out.println("TAK");
+	in.close();
+	}
+}
